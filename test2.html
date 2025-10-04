@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rati Choundawar — Head HR | CHRO</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0b6e4f;
+      --primary-dark: #095a3f;
+      --accent: #ffd166;
+      --bg: #f4f5f6;
+      --text-color: #222;
+      --muted-color: #6c757d;
+      --card-bg: #ffffff;
+      --shadow-light: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 24px rgb(253 207 101);
+      --radius: 14px;
+      --gradient: linear-gradient(135deg, #0b6e4f, #ffd166);
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: var(--card-bg);
+      box-shadow: var(--shadow-light);
+      transition: all 0.35s ease;
+    }
+    .navbar .nav-link {
+      color: var(--text-color);
+      transition: color 0.35s;
+    }
+    .navbar .nav-link:hover { color: var(--primary); }
+    .navbar-brand strong { font-size: 1.1rem; }
+
+    /* HERO */
+    .hero { padding: 5rem 1rem 4rem; }
+    .photo {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid transparent;
+      background-image: var(--gradient);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      transition: transform 0.35s ease;
+    }
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(11,110,79,0.35);
+    }
+
+    /* CARDS */
+    .card-quiet {
+          border: 2px solid #ffd166;
+      background-color: var(--card-bg);
+      box-shadow: var(--shadow-light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
+    .card-quiet:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    /* BUTTONS */
+    .cta-btn {
+      background-image: var(--gradient);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: .65rem 1.5rem;
+      font-weight: 600;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      color: #fff;
+    }
+    .btn-outline-primary {
+      color: var(--primary);
+      border-color: var(--primary);
+      transition: all 0.35s ease;
+    }
+    .btn-outline-primary:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    /* BADGES */
+    .badge-accent {
+      background-color: var(--accent);
+      color: #111;
+      font-weight: 600;
+      padding: .4rem .8rem;
+      border-radius: 100px;
+      font-size: .85rem;
+      margin: 0 .3rem .5rem 0;
+      display: inline-block;
+      box-shadow: var(--shadow-light);
+    }
+    .skill-pill {
+      display: inline-block;
+      background-color: rgba(11, 110, 79, 0.08);
+      border: 1px solid rgba(11,110,79,0.2);
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      margin: .25rem;
+      font-size: .85rem;
+      color: var(--primary-dark);
+      transition: background-color 0.35s, transform 0.3s;
+    }
+    .skill-pill:hover {
+      background-color: rgba(11,110,79,0.15);
+      transform: scale(1.05);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      width: 4px;
+      height: 100%;
+      background-image: var(--gradient);
+      border-radius: 4px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.35rem;
+      top: .6rem;
+      width: .8rem;
+      height: .8rem;
+      background-color: var(--card-bg);
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0b6e4f;
+      color: #fff;
+    }
+    footer p { margin: 0; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { text-align: center; }
+      .photo { margin: 0 auto 1.5rem; }
+      .card-quiet:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="6" fill="#0b6e4f"/>
+          <path d="M6 12h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="ms-2">
+          <strong>Rati Choundawar</strong><br>
+          <small class="text-muted">Chief HR Officer</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn cta-btn ms-3" href="#contact">Let’s Connect</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 text-center text-lg-start">
+          <img src="assets/user2.jpg" alt="Rati Choundawar" class="photo">
+        </div>
+        <div class="col-lg-7">
+          <div class="card-quiet">
+            <h1 class="fw-bold">Rati Choundawar</h1>
+            <p class="lead text-muted">CHRO | Building Talented Teams • Driving Employer Branding & Recruitment Strategy • Conflict Management</p>
+            <p class="small text-muted"><i class="bi bi-geo-alt"></i> Pune, Maharashtra, India</p>
+            <div class="mt-3 mb-3">
+              <span class="badge-accent">Talent Acquisition</span>
+              <span class="badge-accent">Employer Branding</span>
+              <span class="badge-accent">Employee Engagement</span>
+              <span class="badge-accent">Leadership Development</span>
+              <span class="badge-accent">Conflict Resolution</span>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-outline-primary" href="https://in.linkedin.com/in/rati-choundawar-68236b38" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a class="btn cta-btn" href="assets/Rati_Choundawar_CV.pdf" id="downloadCvHero"><i class="bi bi-download"></i> Download CV</a>
+              <a class="btn btn-outline-secondary" href="#contact">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="card-quiet h-100">
+  <h2>About Me</h2>
+  <p>
+    I’m an HR leader with 13+ years of experience in talent management, organizational development, and employee engagement. My focus is on building strong teams, creating positive workplace cultures, and aligning HR practices with business strategy.
+    <br><br>
+    Over the years, I’ve led initiatives in recruitment, performance management, leadership development, and employee well-being—always with a people-first approach. I believe HR should be practical, inclusive, and designed to help both individuals and organizations grow.
+    <br><br>
+    <strong>Core Expertise</strong><br>
+    Talent acquisition & employer branding<br>
+    Employee engagement & development<br>
+    Performance & leadership management<br>
+    Compensation, benefits & compliance<br>
+    Workplace culture & inclusion
+    <br><br>
+    My goal is to shape workplaces where people thrive, leaders grow, and organizations achieve lasting success.
+  </p>
+</div>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="card-quiet mb-3">
+              <h5>Quick Facts</h5>
+              <ul class="list-unstyled">
+                <li><strong>Location:</strong> Pune, Maharashtra</li>
+                <li><strong>Experience:</strong> 13+ years</li>
+                <li><strong>Industries:</strong> Tech, Education, Digital</li>
+                <li><strong>Languages:</strong> English, Hindi</li>
+              </ul>
+            </div>
+            <div class="card-quiet">
+              <h5>Tools & HR Skills</h5>
+              <div class="mt-2">
+                <span class="skill-pill">Zoho People</span>
+                <span class="skill-pill">Workday</span>
+                <span class="skill-pill">SAP SuccessFactors</span>
+                <span class="skill-pill">ATS / HRIS</span>
+                <span class="skill-pill">Conflict Management</span>
+                <span class="skill-pill">DEI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h5>Head of HR — Posiview Digital Technologies Pvt. Ltd.</h5>
+            <small class="text-muted">Oct 2024 – Present | Pune</small>
+            <ul class="mt-2">
+              <li>Leading L&D programs and capability building.</li>
+              <li>Succession planning & talent development.</li>
+              <li>Embedding organizational values via structured learning.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h5>Senior HR Manager — MoneySpring</h5>
+            <small class="text-muted">Mar 2021 – Jan 2024 | Pune</small>
+            <ul class="mt-2">
+              <li>Oversaw hiring across multiple roles.</li>
+              <li>Designed onboarding journeys.</li>
+              <li>Collaborated on performance improvement.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h5>Senior HR Manager — Param Business Solutions</h5>
+            <small class="text-muted">Jun 2019 – Feb 2021</small>
+            <ul class="mt-2">
+              <li>Managed end-to-end recruitment.</li>
+              <li>Maintained talent pool & issue resolution.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h5>HR Manager — Zoucal</h5>
+            <small class="text-muted">Feb 2014 – Dec 2018</small>
+            <ul class="mt-2">
+              <li>Led HR operations across multiple locations.</li>
+              <li>Implemented compliance & policy frameworks.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h5>HR Manager — Dharti Filtration System</h5>
+            <small class="text-muted">Dec 2011 – Jan 2014</small>
+            <ul class="mt-2">
+              <li>Recruitment, training & selection.</li>
+              <li>Conducted assessments & evaluations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-5">
+      <div class="container">
+        <h2 class="mb-4">Education & Certifications</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card-quiet">
+              <h5>MBA – Human Resources</h5>
+              <small class="text-muted">MES College of Engg, Pune (2009 – 2011)</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-quiet">
+              <h5>B.Sc – Biology</h5>
+              <small class="text-muted">SGBAU University, Amravati</small>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h5>Certifications</h5>
+          <ul class="list-unstyled">
+            <li>TSOW: The Shape of Work (2025)</li>
+            <li>LinkedIn Recruiter Assessment – Excel (2024)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4">Skills & Expertise</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card-quiet h-100">
+              <h5>Core HR Strategy</h5>
+              <ul class="mt-2">
+                <li>Employer Branding</li>
+                <li>Digital Transformation</li>
+                <li>Conflict Resolution</li>
+                <li>Talent Acquisition</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-quiet h-100">
+              <h5>Engagement & Experience</h5>
+              <ul class="mt-2">
+                <li>Wellbeing Programs</li>
+                <li>Recognition & Rewards</li>
+                <li>Onboarding & Mentoring</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-quiet h-100">
+              <h5>Leadership & Performance</h5>
+              <ul class="mt-2">
+                <li>Leadership Coaching</li>
+                <li>Succession Planning</li>
+                <li>Performance Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+     <div class="container">
+  <h2 class="mb-4">Contact Me</h2>
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card-quiet h-100">
+        <form id="contactForm" onsubmit="sendEmail(event)">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" rows="4" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn cta-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card-quiet h-100">
+        <h5>Connect with me</h5>
+        <p>You can also reach me via:</p>
+        <p><i class="bi bi-envelope"></i> rati16motewar@gmail.com</p>
+        <p><i class="bi bi-phone"></i> +91 98765 43210</p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="https://in.linkedin.com/in/rati-choundawar-68236b38" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+          <a href="#"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="#"><i class="bi bi-facebook fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p>&copy; 2025 Rati Choundawar. All rights reserved.</p>
+      <p class="small">Designed with  to reflect professionalism & leadership.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+
+  // Contact Form Submission
+  function sendEmail(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    // Email body format — professional and personal
+    const fullBody = `
+${message}
+
+Regards,
+${name}
+${email}
+`;
+
+    const subject = encodeURIComponent("New Message from " + name);
+    const body = encodeURIComponent(fullBody);
+
+    // ✅ NO CC now
+    const mailtoLink = `mailto:rati16motewar@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+  }
+</script>
+
+
+
+</body>
+</html>
